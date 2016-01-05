@@ -20,6 +20,15 @@ import serveur.vuelement.VuePersonnage;
 import serveur.vuelement.VuePotion;
 import utilitaires.Constantes;
 
+import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+
+import serveur.element.Element;
+import serveur.element.Personnage;
+import serveur.element.Potion;
+
 /** 
  * Gere la fenetre de l'arene. 
  * Si le serveur de l'arene est connecte, recupere la VueElement des elements 
@@ -146,7 +155,8 @@ public class AreneJPanel extends JPanel {
 	 * @param g graphics
 	 * @param vueElement vue de l'element a dessiner
 	 */
-	private void dessineElement(Graphics g, VueElement<?> vueElement) {
+	private void dessineElement(Graphics g, VueElement<?> vueElement) 
+	{
 		// affiche l'arene comme un rectangle
 		Rectangle rect = this.getBounds();
 		
@@ -159,8 +169,32 @@ public class AreneJPanel extends JPanel {
 		// definit la couleur de l'element
 		g.setColor(vueElement.getCouleur());
 		
-		// dessine la representation geometrique de l'element
-		dessineElementGeometrique(g, vueElement, coordX, coordY);									
+		// définit et dessine l'icone de la classe du personnage ou de la potion
+		String iconePath = null;
+		File iconeFile = null;
+		Image icone = null;
+		Element entite = vueElement.getElement();
+		// String type = vueElement.getElement().getNom();
+		
+		if(entite instanceof Personnage)
+		{
+			iconePath = "images/Guerrier.png";
+		} 
+		else if (entite instanceof Potion)
+		{
+			// dessine la representation geometrique de l'element
+			dessineElementGeometrique(g, vueElement, coordX, coordY);
+		}			
+		
+		iconeFile = new File(iconePath);
+		
+		try {
+			icone = ImageIO.read(iconeFile);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		g.drawImage(icone, coordX, coordY, null);
 		
 		// ecrit le nom de l'element
 		boolean descendu = dessineElementNom(g, vueElement, coordX, coordY);
@@ -171,6 +205,22 @@ public class AreneJPanel extends JPanel {
 		}
 	}
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	/**
 	 * Dessine la representation geometrique de l'element (cercle pour un 
 	 * personnage, triangle pour une potion).
