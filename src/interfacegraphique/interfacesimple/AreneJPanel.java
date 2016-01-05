@@ -124,6 +124,15 @@ public class AreneJPanel extends JPanel {
 			g.setFont(of);				
 		}
 		
+		Image image;
+		try {
+			image = ImageIO.read(new File("images/map.png"));
+			g.drawImage(image, 0, 0, null);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		// dessiner les elements
 		for(VuePotion vuePotion : potions) {
 			dessineElement(g, vuePotion);
@@ -175,7 +184,6 @@ public class AreneJPanel extends JPanel {
 		Image icone = null;
 		Element entite = vueElement.getElement();
 		// String type = vueElement.getElement().getNom();
-		
 		if(entite instanceof Personnage)
 		{
 			iconePath = "images/Guerrier.png";
@@ -204,22 +212,6 @@ public class AreneJPanel extends JPanel {
 			dessineJauge(g, vueElement, rect, coordX, coordY, descendu);		
 		}
 	}
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	/**
 	 * Dessine la representation geometrique de l'element (cercle pour un 
