@@ -126,8 +126,10 @@ public class AreneJPanel extends JPanel {
 		
 		Image image;
 		try {
-			image = ImageIO.read(new File("images/map.png"));
-			g.drawImage(image, 0, 0, null);
+			image = ImageIO.read(new File("images/map.png"));	
+			// Affichage map de fon, en fonction de la taille de la fenetre
+			g.drawImage(image, 0, 0, (int)rect.getWidth(),(int)rect.getHeight(),
+					0, 0, image.getWidth(null),image.getHeight(null),null);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
