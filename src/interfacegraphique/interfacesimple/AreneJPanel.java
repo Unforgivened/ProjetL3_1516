@@ -179,6 +179,14 @@ public class AreneJPanel extends JPanel {
 		if(entite instanceof Personnage)
 		{
 			iconePath = "images/Guerrier.png";
+			iconeFile = new File(iconePath);
+			try {
+				icone = ImageIO.read(iconeFile);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			
+			g.drawImage(icone, coordX, coordY, null);
 		} 
 		else if (entite instanceof Potion)
 		{
@@ -186,15 +194,7 @@ public class AreneJPanel extends JPanel {
 			dessineElementGeometrique(g, vueElement, coordX, coordY);
 		}			
 		
-		iconeFile = new File(iconePath);
-		
-		try {
-			icone = ImageIO.read(iconeFile);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		g.drawImage(icone, coordX, coordY, null);
+
 		
 		// ecrit le nom de l'element
 		boolean descendu = dessineElementNom(g, vueElement, coordX, coordY);
