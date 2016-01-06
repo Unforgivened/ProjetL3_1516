@@ -6,6 +6,7 @@ import java.net.InetAddress;
 import java.util.HashMap;
 
 import client.StrategiePersonnage;
+import client.StrategieVoleur;
 import logger.LoggerProjet;
 import serveur.element.Caracteristique;
 import utilitaires.Calculs;
@@ -73,7 +74,7 @@ public class LanceVoleur {
 			
 			Point position = Calculs.positionAleatoireArene();
 			
-			new StrategiePersonnage(ipArene, port, ipConsole, nom, groupe, caracts, nbTours, position, logger);
+			new StrategieVoleur(ipArene, port, ipConsole, nom, groupe, caracts, nbTours, position, logger);
 			logger.info("Lanceur", "Creation du personnage reussie");
 			
 		} catch (Exception e) {

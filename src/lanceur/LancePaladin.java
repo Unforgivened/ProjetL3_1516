@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.net.InetAddress;
 import java.util.HashMap;
 
+import client.StrategiePaladin;
 import client.StrategiePersonnage;
 import logger.LoggerProjet;
 import serveur.element.Caracteristique;
@@ -72,7 +73,7 @@ public class LancePaladin {
 			
 			Point position = Calculs.positionAleatoireArene();
 			
-			new StrategiePersonnage(ipArene, port, ipConsole, nom, groupe, caracts, nbTours, position, logger);
+			new StrategiePaladin(ipArene, port, ipConsole, nom, groupe, caracts, nbTours, position, logger);
 			logger.info("Lanceur", "Creation du personnage reussie");
 			
 		} catch (Exception e) {
