@@ -99,8 +99,8 @@ public class StrategieBerserker extends StrategiePersonnage {
 				} else { // personnage
 					// duel
 					console.setPhrase("Je fais un duel avec " + elemPlusProche.getNom());
-					arene.lanceAttaque(refRMI, refCible);
 					gainFo();
+					arene.lanceAttaque(refRMI, refCible);
 				}
 				
 			} else { // si voisins, mais plus eloignes

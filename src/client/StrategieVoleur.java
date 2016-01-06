@@ -100,15 +100,15 @@ public class StrategieVoleur extends StrategiePersonnage {
 
 				} else { // personnage
 					// duel
-					if(aVole) {
+					if(aVole == true) {
 						console.setPhrase("Je fais un duel avec " + elemPlusProche.getNom());
-						arene.lanceAttaque(refRMI, refCible);
 						aVole = false;
+						arene.lanceAttaque(refRMI, refCible);
 					}
 					else {
 						console.setPhrase("Je vole " + elemPlusProche.getNom());
-						arene.vole(refRMI, refCible);
 						aVole = true;
+						arene.vole(refRMI, refCible);
 					}
 					
 				}
