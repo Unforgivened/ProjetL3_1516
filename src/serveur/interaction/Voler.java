@@ -18,7 +18,7 @@ public class Voler extends Interaction<VuePersonnage> {
 	@Override
 	public void interagit() {
 		try {
-			logs(Level.INFO, Constantes.nomRaccourciClient(attaquant) + " va soigner " + 
+			logs(Level.INFO, Constantes.nomRaccourciClient(attaquant) + " va voler " + 
 					Constantes.nomRaccourciClient(defenseur));
 			
 			// si le personnage est vivant
@@ -34,14 +34,14 @@ public class Voler extends Interaction<VuePersonnage> {
 					logs(Level.INFO, "Impossible de voler !");
 				}
 				
-				logs(Level.INFO, "Ralentissement effectue");
+				logs(Level.INFO, "Vol effectue");
 				
 			} else {
 				logs(Level.INFO, Constantes.nomRaccourciClient(attaquant) + " ou " + 
 						Constantes.nomRaccourciClient(defenseur) + " est deja mort... Rien ne se passe");
 			}
 		} catch (RemoteException e) {
-			logs(Level.INFO, "\nErreur lors d'un soin : " + e.toString());
+			logs(Level.INFO, "\nErreur lors d'un vol : " + e.toString());
 		}
 	}
 }

@@ -48,7 +48,7 @@ public class Ralentissement extends Interaction<VuePersonnage> {
 						Constantes.nomRaccourciClient(defenseur) + " est deja mort... Rien ne se passe");
 			}
 		} catch (RemoteException e) {
-			logs(Level.INFO, "\nErreur lors d'un soin : " + e.toString());
+			logs(Level.INFO, "\nErreur lors d'un ralentissement : " + e.toString());
 		}
 	}
 }

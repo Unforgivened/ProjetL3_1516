@@ -188,7 +188,25 @@ public class AreneJPanel extends JPanel {
 		// String type = vueElement.getElement().getNom();
 		if(entite instanceof Personnage)
 		{
-			iconePath = "images/Guerrier.png";
+			switch (entite.getNom()) {
+				case "Assassin" : 	iconePath = "images/Assassin.png";
+									break;
+				case "Barde" :		iconePath = "images/Barde.png";
+									break;
+				case "Berserker" :	iconePath = "images/Berserker.png";
+									break;
+				case "Guerrier" :	iconePath = "images/Guerrier.png";
+									break;
+				case "Ivrogne" :	iconePath = "images/Ivrogne.png";
+									break;
+				case "Mage Temps" :	iconePath = "images/Chronomage.png";
+									break;
+				case "Paladin" :	iconePath = "images/Pretre.png";
+									break;
+				case "Voleur" :		iconePath = "images/Voleur.png";
+									break;
+			}
+			
 			iconeFile = new File(iconePath);
 			try {
 				icone = ImageIO.read(iconeFile);
