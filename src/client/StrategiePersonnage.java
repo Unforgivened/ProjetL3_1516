@@ -36,6 +36,7 @@ public class StrategiePersonnage {
 	 * @param nbTours nombre de tours pour ce personnage (si negatif, illimite)
 	 * @param position position initiale du personnage dans l'arene
 	 * @param logger gestionnaire de log
+	 * !!!!!!!!!!!!!!!!!!!
 	 */
 	public StrategiePersonnage(String ipArene, int port, String ipConsole, 
 			String nom, String groupe, HashMap<Caracteristique, Integer> caracts,
