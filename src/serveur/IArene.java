@@ -176,6 +176,12 @@ public interface IArene extends Remote {
 	 */
 	public boolean lanceAttaque(int refRMI, int refAdv) throws RemoteException;
 	
+	public boolean soigne(int refRMI, int refCible) throws RemoteException;
+	
+	public boolean ralentit(int refRMI, int refCible) throws RemoteException;
+	
+	public boolean vole(int refRMI, int refCible) throws RemoteException;
+	
 	/**
 	 * Deplace le personnage correspondant a la console donne vers l'element 
 	 * correspondant a la reference RMI cible.
